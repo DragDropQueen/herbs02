@@ -1,9 +1,14 @@
 require 'spec_helper'
-require_relative '../herb_app'
+require_relative '../herbs_app'
 
-Capybara.app = HerbApp
+Capybara.app = HerbsApp
 
 feature "User can manage herbs on hand" do
+
+  before do
+    DB[:herbs].delete
+  end
+
   scenario "User can add herbs to a page" do
     visit '/'
     expect(page).to have_no_content('Chickweed')

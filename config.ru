@@ -1,3 +1,6 @@
-require_relative 'herb_app'
+require_relative 'herbs_app'
+require 'sequel'
 
-run HerbApp
+DB = Sequel.connect('postgres://gschool_user:password@localhost/herbs_development')
+
+run HerbsApp

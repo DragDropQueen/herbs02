@@ -2,3 +2,9 @@
   <input type="text" placeholder="Herb Name" name="herb_name">
   <input type="submit" value="Collect"
 </form>
+<hr>
+<%herb_friends.each do |herb|%>
+<ul>
+  <li><%= herb[:name] %></li>
+</ul>
+<% end %>
